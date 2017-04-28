@@ -6,9 +6,14 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 
+// manage routes
 var index = require('./routes/index');
 var users = require('./routes/users');
 var farmer = require('./routes/farmer');
+var variety = require('./routes/variety');
+var farm = require('./routes/farm');
+var blockFarm = require('./routes/block-farm');
+var processingFacility = require('./routes/processing-facility');
 
 var app = express();
 
@@ -28,6 +33,10 @@ app.use(cors());
 app.use('/', index);
 app.use('/users', users);
 app.use('/farmer', farmer);
+app.use('/variety', variety);
+app.use('/farm', farm);
+app.use('/block-farm', blockFarm);
+app.use('/processing-facility', processingFacility);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
